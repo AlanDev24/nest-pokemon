@@ -18,6 +18,11 @@ npm insstall -g @nestjs/cli
 docker-compose up -d
 ```
 
+5. Ejecutar para llenar la base de datos
+```
+http://localhost:3000/api/v2/seed
+```
+
 ## Stack usado
 * MongoDB
 * NestJs
