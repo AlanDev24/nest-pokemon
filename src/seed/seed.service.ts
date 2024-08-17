@@ -12,14 +12,14 @@ export class SeedService {
   constructor(
     @InjectModel(Pokemon.name)
     private readonly pokemonModel: Model<Pokemon>,
-    private readonly htpp: AxiosAdapter,
+    private readonly http: AxiosAdapter,
   ) {}
 
   async executeSeed() {
   
     await this.pokemonModel.deleteMany();
 
-    const data = await this.htpp.get<PokeResponse>(
+    const data = await this.http.get<PokeResponse>(
       'https://pokeapi.co/api/v2/pokemon?limit=650',
     );
 
